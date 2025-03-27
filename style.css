@@ -3,145 +3,147 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 10px; /* Reduced padding */
     background-color: #f0f0f0;
+    font-size: 0.95em; /* Slightly smaller base font */
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-top: 5px; /* Reduced margin */
+    margin-bottom: 10px; /* Reduced margin */
+    font-size: 1.5em; /* Reduced size */
 }
 
-/* --- Container for Textarea and Copy Button --- */
+/* --- Textarea and Copy Button --- */
 .textarea-container {
-    display: flex; /* Align items horizontally */
-    align-items: flex-start; /* Align items to the top */
-    width: 80%;
-    max-width: 650px; /* Adjust max-width to potentially fit button */
-    margin-bottom: 15px; /* Space below container */
+    display: flex;
+    align-items: flex-start;
+    width: 90%; /* Slightly wider percentage */
+    max-width: 550px; /* Reduced max width */
+    margin-bottom: 10px; /* Reduced margin */
 }
 
 #output {
-    flex-grow: 1; /* Allow textarea to take up available space */
-    /* width: 80%; remove fixed width */
-    /* max-width: 600px; remove fixed width */
-    margin-bottom: 0; /* Remove bottom margin as it's on the container now */
-    padding: 10px;
-    font-size: 1.2em;
+    flex-grow: 1;
+    padding: 8px; /* Reduced padding */
+    font-size: 1.1em; /* Reduced size */
     border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 5px; /* Space between textarea and button */
+    border-radius: 4px; /* Smaller radius */
+    margin-right: 4px; /* Reduced space */
+    resize: vertical; /* Allow vertical resize */
 }
 
 #copy-button {
-    padding: 8px 12px;
-    font-size: 0.9em;
+    padding: 6px 10px; /* Reduced padding */
+    font-size: 1.1em; /* Adjusted icon size */
     cursor: pointer;
     border: 1px solid #aaa;
     border-radius: 4px;
     background-color: #e0e0e0;
-    height: 38px; /* Match height roughly */
-    white-space: nowrap; /* Prevent text wrapping */
+    height: auto; /* Let height be determined by content */
+    line-height: 1.5; /* Adjust line height if needed */
+    flex-shrink: 0; /* Prevent button from shrinking */
 }
 
-#copy-button:hover {
-    background-color: #d0d0d0;
-}
+#copy-button:hover { background-color: #d0d0d0; }
+#copy-button:active { background-color: #b0b0b0; }
 
-#copy-button:active {
-    background-color: #b0b0b0;
-}
-/* --- End Textarea/Copy Button Styles --- */
-
-
-/* --- Controls Container (Coder Button, Label, Input) --- */
+/* --- Controls (Encode/Decode Buttons, Shift Input) --- */
 .controls {
     display: flex;
-    align-items: center; /* Vertically align items in the middle */
-    margin-bottom: 15px;
-    gap: 10px; /* Add space between items */
+    align-items: center;
+    margin-bottom: 10px; /* Reduced margin */
+    gap: 8px; /* Reduced space */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center; /* Center items if they wrap */
 }
 
-#coder-button {
-    padding: 10px 20px;
-    font-size: 1em;
+/* Common style for Encode/Decode buttons */
+#coder-button,
+#decoder-button {
+    padding: 6px 12px; /* Reduced padding */
+    font-size: 0.9em; /* Reduced size */
     cursor: pointer;
     border: 1px solid #aaa;
     border-radius: 4px;
     background-color: #e0e0e0;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
-#coder-button:hover {
+#coder-button:hover,
+#decoder-button:hover {
     background-color: #d0d0d0;
 }
 
+/* Active state for Encode button */
 #coder-button.active {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green */
     color: white;
     border-color: #367c39;
 }
 
+/* Active state for Decode button */
+#decoder-button.active {
+    background-color: #2196F3; /* Blue */
+    color: white;
+    border-color: #1769aa;
+}
+
 .controls label {
-    font-weight: bold;
+    font-weight: normal; /* Less prominent label */
+    font-size: 0.9em;
 }
 
 #coding-factor {
-    width: 50px; /* Small width for the number input */
-    padding: 5px;
-    font-size: 1em;
+    width: 40px; /* Reduced width */
+    padding: 4px; /* Reduced padding */
+    font-size: 0.9em; /* Reduced size */
     border: 1px solid #ccc;
     border-radius: 4px;
     text-align: center;
 }
-/* --- End Controls Styles --- */
 
-
+/* --- Keyboard --- */
 #keyboard {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 8px; /* Reduced padding */
     background-color: #dcdcdc;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: fit-content; /* Make keyboard width fit content */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    width: fit-content;
 }
 
 .keyboard-row {
     display: flex;
-    margin-bottom: 5px;
+    margin-bottom: 3px; /* Reduced space */
+    justify-content: center; /* Center keys in the row */
 }
 
 .key {
     background-color: #ffffff;
     border: 1px solid #aaa;
-    border-radius: 4px;
-    padding: 10px 15px;
-    margin: 2px;
-    font-size: 1em;
-    font-weight: bold;
+    border-radius: 3px; /* Smaller radius */
+    padding: 6px 10px; /* Reduced padding */
+    margin: 1px; /* Reduced margin */
+    font-size: 0.9em; /* Reduced key font size */
+    font-weight: normal; /* Normal weight */
     cursor: pointer;
-    min-width: 40px;
+    min-width: 30px; /* Reduced min-width */
     text-align: center;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     transition: background-color 0.1s, transform 0.1s;
-    user-select: none; /* Prevent text selection on rapid clicks */
+    user-select: none;
 }
 
-.key:hover {
-    background-color: #f0f0f0;
-}
-
+.key:hover { background-color: #f0f0f0; }
 .key:active {
     background-color: #cccccc;
     transform: translateY(1px);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: none; /* Remove shadow on press */
 }
 
-.key-space {
-    width: 250px;
-}
-
-.key-backspace {
-    width: 100px;
-}
+/* Adjusted special key widths */
+.key-space { width: 180px; }
+.key-backspace { width: 70px; }

@@ -8,24 +8,22 @@
 </head>
 <body>
 
-    <h1>Virtual Keyboard Example</h1>
+    <h1>Virtual Keyboard</h1> {/* Slightly shorter title */}
 
-    {/* Textarea and Copy Button Container */}
     <div class="textarea-container">
-        <textarea id="output" rows="5" placeholder="Click keys below..."></textarea>
-        <button id="copy-button" title="Copy text to clipboard">📋 Copy</button>
+        <textarea id="output" rows="4" placeholder="Click keys below..."></textarea> {/* Reduced rows */}
+        <button id="copy-button" title="Copy text to clipboard">📋</button> {/* Icon only for copy */}
     </div>
 
-
-    {/* Controls for Coder Mode */}
     <div class="controls">
-        <button id="coder-button">Coder</button>
+        <button id="coder-button">Encode</button> {/* Renamed for clarity */}
+        <button id="decoder-button">Decode</button> {/* Added Decoder button */}
         <label for="coding-factor">Shift:</label>
         <input type="number" id="coding-factor" value="1" min="0" max="25" title="Enter letter shift value (0-25)">
     </div>
 
     <div id="keyboard">
-        {/* Keyboard keys will be generated here by JavaScript */}
+        {/* Keyboard keys will be generated here */}
     </div>
 
     <script src="script.js"></script>
